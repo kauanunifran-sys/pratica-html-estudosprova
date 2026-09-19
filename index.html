@@ -14,16 +14,35 @@
     <main>
         <section>
             <h2>cadastro</h2>
-            <form action="">
-                <label for="nome">nome</label>
-                <label for="email">email</label>
-                <label for="senha">senha</label>
-                <label for="termos">termos</label>
-                <label for="enviar">enviar</label>
+            <form id="formCadastro" methos="POST">
+                <label for="nome">nome completo</label>
+                <input type="texte" id="nome" required />
+                <br>
+                <br>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Por favor, insira um e-mail válido"/>
+                <br>
+                <br>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" required minlength="8" title="a senha deve ter no minino 8 caracteres">
+                <br>
+                <br>
+                <label for="termos">Aceite os termos</label>
+                <input type="checkbox" id="termos" required />
+                <br>
+                <br>
+                <label for="enviar">Botão de envio</label>
+                <input type="submit" id="enviar" >
+
             </form>
         </section>
     </main>
-    
+    <script>
+    document.getElementById('formCadastro').addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Dados enviados');
+    });
+</script>
 </body>
 
 <footer>
